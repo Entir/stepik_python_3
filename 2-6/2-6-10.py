@@ -1,18 +1,17 @@
-lst = []
+a = []
 
 while True:
     tmp = input()
     if tmp == 'end':
         break
     else:
-        lst.append([int(i) for i in tmp.split()])
+        a.append([int(i) for i in tmp.split()])
 
-print(lst)
 
-result = lst.copy()
-print(result)
+result = a.copy()
 
-# дорешать когда-нибудь эту задачку и следующую, посмотрев видео....
-
-# https://www.youtube.com/watch?v=0qtLrRm36J0&t=6s
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        print(a[i - 1][j] + a[(i + 1) % len(a)][j] + a[i][j - 1] + a[i][(j + 1) % len(a[i])], end=' ')
+    print()
 
